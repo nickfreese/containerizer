@@ -1,0 +1,35 @@
+<html>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<script src='containerizer.js'></script>
+<script>
+
+/* test it out */
+
+var myApp = containerizer('myApp');
+
+
+myApp.injectApp('div'); //adds the app to all div elements
+
+console.log(myApp);
+
+/* count to 100 in all apps */
+myApp.applyAll(function(e){
+	var i = 0;
+    var interval = setInterval(function(){
+    	e.innerHTML = i;
+    	i++
+    	if(i >= 100){
+         clearInterval(interval);
+    	}
+    }, 500);
+});
+
+
+
+
+
+</script>
+</html>
